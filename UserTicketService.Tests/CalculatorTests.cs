@@ -30,11 +30,17 @@ namespace UserTicketService.Tests
             var calculator = new Calculator();
             Assert.That(calculator.Division(200, 10) == 20);
         }
-        [Test]
+        [Fact]
         public void Division_MustThrowException()
         {
             var calculator = new Calculator();
             Assert.Throws<DivideByZeroException>(() => calculator.Division(30, 0));
+        }
+        [Fact]
+        public void Additional_MustReturnCorrectValue()
+        {
+            var calculator = new Calculator();
+            Assert.That(calculator.Additional(2, 2) == 4);
         }
     }
 }
